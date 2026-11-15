@@ -1,0 +1,173 @@
+[
+ {
+  "id": "f-piso-bill-toledo-45x45",
+  "nombre": "Bill Toledo",
+  "tipo": "piso",
+  "imagen": "texturas/pisos/Bill_Toledo-45x45.webp",
+  "miniatura": "texturas/pisos/min/Bill_Toledo-45x45.webp",
+  "pieza": {
+   "ancho": 45,
+   "largo": 45
+  },
+  "modulo": {
+   "cols": 1,
+   "filas": 1
+  },
+  "piezasPorCaja": 11,
+  "precioCaja": 25,
+  "marca": "San Lorenzo",
+  "acabado": "Brillante"
+ },
+ {
+  "id": "f-piso-david-lisboa-mix-45x45",
+  "nombre": "David Lisboa Mix",
+  "tipo": "piso",
+  "imagen": "texturas/pisos/David_lisboa_mix-45x45.webp",
+  "miniatura": "texturas/pisos/min/David_lisboa_mix-45x45.webp",
+  "pieza": {
+   "ancho": 45,
+   "largo": 45
+  },
+  "modulo": {
+   "cols": 1,
+   "filas": 1
+  },
+  "piezasPorCaja": 11,
+  "precioCaja": 29.9,
+  "marca": "San Lorenzo",
+  "acabado": "Satinado"
+ },
+ {
+  "id": "f-piso-deysi-piedra-rio-color-45x45",
+  "nombre": "Deysi Piedra Río Color",
+  "tipo": "piso",
+  "imagen": "texturas/pisos/Deysi_piedra_rio_color-45x45.webp",
+  "miniatura": "texturas/pisos/min/Deysi_piedra_rio_color-45x45.webp",
+  "pieza": {
+   "ancho": 45,
+   "largo": 45
+  },
+  "modulo": {
+   "cols": 1,
+   "filas": 1
+  },
+  "piezasPorCaja": 11,
+  "precioCaja": 29,
+  "marca": "San Lorenzo",
+  "acabado": "Relieve 3D"
+ },
+ {
+  "id": "f-piso-ejemplo-piso-greca-30x30",
+  "nombre": "Ejemplo Piso Greca",
+  "tipo": "piso",
+  "imagen": "texturas/pisos/Ejemplo_Piso_Greca-30x30.png",
+  "miniatura": null,
+  "pieza": {
+   "ancho": 30,
+   "largo": 30
+  },
+  "modulo": {
+   "cols": 1,
+   "filas": 1
+  },
+  "piezasPorCaja": 16,
+  "precioCaja": 112,
+  "marca": "Marca Demo",
+  "acabado": "Satinado"
+ },
+ {
+  "id": "f-piso-berna-gris-45x45",
+  "nombre": "Berna Gris",
+  "tipo": "piso",
+  "imagen": "texturas/pisos/berna_gris-45x45.webp",
+  "miniatura": "texturas/pisos/min/berna_gris-45x45.webp",
+  "pieza": {
+   "ancho": 45,
+   "largo": 45
+  },
+  "modulo": {
+   "cols": 1,
+   "filas": 1
+  },
+  "piezasPorCaja": 11,
+  "precioCaja": 35.82,
+  "marca": "San Lorenzo",
+  "acabado": "Brillante"
+ },
+ {
+  "id": "f-pared-anahi-fachaleta-montecarlo-27x45",
+  "nombre": "Anahí Fachaleta Montecarlo",
+  "tipo": "pared",
+  "imagen": "texturas/paredes/Anahi_fachaleta_Montecarlo-27x45.webp",
+  "miniatura": "texturas/paredes/min/Anahi_fachaleta_Montecarlo-27x45.webp",
+  "pieza": {
+   "ancho": 27,
+   "largo": 45
+  },
+  "modulo": {
+   "cols": 1,
+   "filas": 1
+  },
+  "piezasPorCaja": 17,
+  "precioCaja": 34,
+  "marca": "San Lorenzo",
+  "acabado": "Relieve 3D"
+ },
+ {
+  "id": "f-pared-ejemplo-cuatro-piezas-15x15-m2x2",
+  "nombre": "Ejemplo Cuatro Piezas",
+  "tipo": "pared",
+  "imagen": "texturas/paredes/Ejemplo_Cuatro_Piezas-15x15-m2x2.png",
+  "miniatura": null,
+  "pieza": {
+   "ancho": 15,
+   "largo": 15
+  },
+  "modulo": {
+   "cols": 2,
+   "filas": 2
+  },
+  "piezasPorCaja": 64,
+  "precioCaja": 105,
+  "marca": "Marca Demo",
+  "acabado": "Brillante"
+ },
+ {
+  "id": "f-pared-ejemplo-mayolica-floral-20x20",
+  "nombre": "Ejemplo Mayólica Floral",
+  "tipo": "pared",
+  "imagen": "texturas/paredes/Ejemplo_Mayolica_Floral-20x20.png",
+  "miniatura": null,
+  "pieza": {
+   "ancho": 20,
+   "largo": 20
+  },
+  "modulo": {
+   "cols": 1,
+   "filas": 1
+  },
+  "piezasPorCaja": 36,
+  "precioCaja": 98.5,
+  "marca": "Marca Demo",
+  "acabado": "Brillante"
+ },
+ {
+  "id": "f-pared-felipe-pepelma-aqua-27x45",
+  "nombre": "Felipe Pepelma Aqua",
+  "tipo": "pared",
+  "imagen": "texturas/paredes/Felipe_Pepelma_aqua-27x45.webp",
+  "miniatura": "texturas/paredes/min/Felipe_Pepelma_aqua-27x45.webp",
+  "pieza": {
+   "ancho": 27,
+   "largo": 45
+  },
+  "modulo": {
+   "cols": 1,
+   "filas": 1
+  },
+  "piezasPorCaja": 17,
+  "precioCaja": 32,
+  "marca": "San Lorenzo",
+  "acabado": "Brillante"
+ }
+]

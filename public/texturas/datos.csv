@@ -1,0 +1,12 @@
+# Datos opcionales de cada imagen. La primera columna es el nombre EXACTO del archivo.
+# Columnas: nombre (opcional, sobreescribe el del archivo), piezas_por_caja, precio_caja, marca, acabado (Brillante, Satinado, Mate, Rústico, Relieve 3D)
+archivo,nombre,piezas_por_caja,precio_caja,marca,acabado
+Ejemplo_Mayolica_Floral-20x20.png,Ejemplo Mayólica Floral,36,98.50,Marca Demo,Brillante
+Ejemplo_Piso_Greca-30x30.png,Ejemplo Piso Greca,16,112.00,Marca Demo,Satinado
+Ejemplo_Cuatro_Piezas-15x15-m2x2.png,Ejemplo Cuatro Piezas,64,105.00,Marca Demo,Brillante
+berna_gris-45x45.webp,Berna Gris,11,35.82,San Lorenzo,Brillante
+Anahi_fachaleta_Montecarlo-27x45.webp,Anahí Fachaleta Montecarlo,17,34.00,San Lorenzo,Relieve 3D
+Felipe_Pepelma_aqua-27x45.webp,Felipe Pepelma Aqua,17,32.00,San Lorenzo,Brillante
+Bill_Toledo-45x45.webp,Bill Toledo,11,25.00,San Lorenzo,Brillante
+David_lisboa_mix-45x45.webp,David Lisboa Mix,11,29.90,San Lorenzo,Satinado
+Deysi_piedra_rio_color-45x45.webp,Deysi Piedra Río Color,11,29.00,San Lorenzo,Relieve 3D

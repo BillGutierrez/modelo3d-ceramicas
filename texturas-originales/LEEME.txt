@@ -1,0 +1,4 @@
+ORIGINALES (opcional) - guarda aquí tus fotos grandes en las carpetas pisos/ y paredes/.
+Al ejecutar  npm run optimizar  se convierten a WebP de máximo 1024 px (y una miniatura de 160 px)
+y se copian a public/texturas/. Así la página carga rápido aunque tengas cientos de modelos.
+Mantén el formato de nombre:  Nombre_Con_Espacios-ANCHOxLARGO.jpg

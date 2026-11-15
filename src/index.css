@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+html, body, #root { height: 100%; }
+body {
+  @apply bg-plano-50 text-plano-900 font-sans antialiased;
+  font-variant-numeric: tabular-nums;
+}
+
+@layer components {
+  .campo {
+    @apply w-full rounded-md border border-plano-300 bg-white px-3 py-2 text-sm text-plano-900 placeholder:text-plano-500
+      focus:border-cobalto-500 focus:outline-none focus:ring-2 focus:ring-cobalto-500/25;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-plano-300 bg-white px-3 py-2 text-sm font-medium text-plano-900
+      transition-colors hover:bg-plano-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cobalto-500 disabled:opacity-50;
+  }
+  .btn-primario {
+    @apply border-cobalto-600 bg-cobalto-600 text-white hover:bg-cobalto-700;
+  }
+  .btn-peligro { @apply text-red-700 hover:bg-red-50; }
+  .etiqueta { @apply text-xs font-medium text-plano-500; }
+  .seccion { @apply border-b border-plano-200 px-4 py-4; }
+  .seccion h3 { @apply mb-3 text-sm font-semibold text-plano-900; }
+}
+
+input[type='range'] { @apply h-1.5 w-full cursor-pointer appearance-none rounded-full bg-plano-200 accent-cobalto-600; }
+input[type='color'] { @apply h-8 w-10 cursor-pointer rounded border border-plano-300 bg-white p-0.5; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+  .hoja { box-shadow: none !important; border: none !important; padding: 0 !important; }
+  @page { margin: 14mm; }
+}

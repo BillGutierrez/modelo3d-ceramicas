@@ -1,0 +1,11 @@
+PISOS - pon aquí las imágenes (jpg, png o webp) del diseño de la pieza, vista de frente y sin junta.
+
+Nombre del archivo:   Nombre_Con_Espacios-ANCHOxLARGO.jpg      (medidas de UNA pieza, en cm)
+  Ejemplo:            Porcelanato_Gris_Perla-60x60.jpg
+  Si la imagen muestra varias piezas que forman el dibujo (por ejemplo 2 columnas x 2 filas):
+                      Mayolica_Mar-20x20-m2x2.jpg
+
+Después ejecuta:  npm run catalogo      (o simplemente npm run dev / npm run build)
+Precio, piezas por caja, marca y acabado se escriben en public/texturas/datos.csv
+
+Los archivos "Ejemplo_*" son de prueba: bórralos cuando agregues los tuyos.
