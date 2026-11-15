@@ -23,7 +23,7 @@ function Fila({ k, v, fuerte }) {
 function BloqueSuperficie({ r }) {
   const m = r.mat;
   return (
-    <section className="break-inside-avoid rounded-lg border border-plano-200 p-4">
+    <section className="report-surface rounded-lg border border-plano-200 p-4">
       <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
         <h3 className="text-base font-semibold">{r.nombre}: {m.nombre}</h3>
         <span className="text-xs text-plano-500">Pieza {etiquetaMedida(m)} · caja de {m.piezasPorCaja} ({fmt(areaCajaM2(m))} m²)</span>
@@ -87,8 +87,8 @@ export default function Costos() {
   const hoy = new Date().toLocaleDateString('es-PE', { day: '2-digit', month: 'long', year: 'numeric' });
 
   return (
-    <div className="h-full overflow-y-auto">
-      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-6 lg:grid-cols-[320px_minmax(0,1fr)]">
+    <div className="costos-pagina h-full overflow-y-auto">
+      <div className="costos-layout mx-auto grid max-w-7xl gap-6 px-4 py-6 lg:grid-cols-[320px_minmax(0,1fr)]">
         {/* ---- Controles (no se imprimen) ---- */}
         <aside className="no-print space-y-4 lg:sticky lg:top-6 lg:self-start">
           <div className="rounded-lg border border-plano-200 bg-white p-4">
@@ -147,23 +147,29 @@ export default function Costos() {
             <button className="btn btn-primario flex-1" onClick={() => window.print()}>Imprimir o guardar PDF</button>
             <Link className="btn" to="/">Editar en 3D</Link>
           </div>
+          <p className="text-xs text-plano-500">
+            En el diálogo de impresión, elige «Guardar como PDF», papel A4 y desactiva encabezados y pies del navegador.
+          </p>
         </aside>
 
         {/* ---- Informe ---- */}
         <article className="hoja rounded-lg border border-plano-200 bg-white p-6 shadow-sm">
           <header className="mb-5 flex flex-wrap items-baseline justify-between gap-2 border-b border-plano-200 pb-4">
-            <h1 className="text-xl font-semibold tracking-tight">Informe de materiales y costos</h1>
-            <span className="text-sm text-plano-500">{hoy}</span>
+            <div>
+              <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cobalto-700">Visualizador de cerámicas</p>
+              <h1 className="text-xl font-semibold tracking-tight">Informe de materiales y costos</h1>
+            </div>
+            <time className="text-sm text-plano-500">{hoy}</time>
           </header>
 
           {sinPrecio.length > 0 && (
-            <p className="no-print mb-4 rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-900">
-              {sinPrecio.map((x) => x.mat.nombre).join(', ')} no tiene precio. Agrégalo en <Link className="underline" to="/catalogo">Catálogo</Link> o en <code>public/texturas/datos.csv</code> para que el total sea correcto.
+            <p className="report-warning mb-4 rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-900">
+              {sinPrecio.map((x) => x.mat.nombre).join(', ')} no tiene precio y su costo no está incluido en el total. Agrégalo en <Link className="underline" to="/catalogo">Catálogo</Link> o en <code>public/texturas/datos.csv</code>.
             </p>
           )}
 
-          <div className="mb-5 grid gap-5 md:grid-cols-[1fr_1fr]">
-            <section>
+          <div className={`report-meta mb-5 grid gap-5 md:grid-cols-[1fr_1fr] ${s.captura ? '' : 'report-room-full'}`}>
+            <section className="report-room">
               <h2 className="mb-2 text-sm font-semibold">Cuarto</h2>
               <dl>
                 <Fila k="Largo" v={`${fmt(s.room.largo)} m`} />
@@ -174,21 +180,21 @@ export default function Costos() {
                 <Fila k="Junta" v={`${fmt(s.junta.mm, 1)} mm`} />
               </dl>
             </section>
-            <section>
-              <h2 className="mb-2 text-sm font-semibold">Vista del diseño</h2>
-              {s.captura
-                ? <img src={s.captura} alt="Vista 3D guardada del cuarto" className="w-full rounded-md border border-plano-200" />
-                : <div className="no-print flex h-36 items-center justify-center rounded-md border border-dashed border-plano-300 p-3 text-center text-sm text-plano-500">Aún no hay una vista guardada. Usa «Guardar vista» en el Modelo 3D para incluirla aquí.</div>}
-            </section>
+            {s.captura ? (
+              <section className="report-visual">
+                <h2 className="mb-2 text-sm font-semibold">Vista del diseño</h2>
+                <img src={s.captura} alt="Vista 3D guardada del cuarto" className="report-capture w-full rounded-md border border-plano-200" />
+              </section>
+            ) : (
+              <section className="no-print">
+                <h2 className="mb-2 text-sm font-semibold">Vista del diseño</h2>
+                <div className="flex h-36 items-center justify-center rounded-md border border-dashed border-plano-300 p-3 text-center text-sm text-plano-500">Aún no hay una vista guardada. Usa «Guardar vista» en el Modelo 3D para incluirla aquí.</div>
+              </section>
+            )}
           </div>
 
-          <div className="space-y-4">
-            {informe.superficies.map((r) => <BloqueSuperficie key={r.nombre} r={r} />)}
-            {informe.superficies.length === 0 && <p className="text-sm text-plano-500">Elige un piso o una pared en el Modelo 3D para ver el cálculo.</p>}
-          </div>
-
-          <section className="mt-5 break-inside-avoid rounded-lg bg-cobalto-50 p-4">
-            <h2 className="mb-2 text-sm font-semibold text-cobalto-700">Resumen</h2>
+          <section className="report-summary mb-5 break-inside-avoid rounded-lg bg-cobalto-50 p-4">
+            <h2 className="mb-2 text-sm font-semibold text-cobalto-700">Resumen general</h2>
             <dl>
               <Fila k="Costo total de cerámicas" v={<span className="text-lg font-semibold">{dinero(informe.total)}</span>} />
               <Fila k="Desperdicio total" v={`${fmt(informe.desperdicioM2)} m² (${fmt(informe.desperdicioPct, 1)} %)`} />
@@ -197,7 +203,12 @@ export default function Costos() {
             </dl>
           </section>
 
-          <footer className="mt-5 space-y-1 text-xs text-plano-500">
+          <div className="space-y-4">
+            {informe.superficies.map((r) => <BloqueSuperficie key={r.nombre} r={r} />)}
+            {informe.superficies.length === 0 && <p className="text-sm text-plano-500">Elige un piso o una pared en el Modelo 3D para ver el cálculo.</p>}
+          </div>
+
+          <footer className="report-method mt-5 space-y-1 text-xs text-plano-500">
             <p>Método: se cuentan las piezas enteras que caben por fila y columna (considerando la junta) y las piezas de borde que hay que cortar. Con «reutilizar recortes», el sobrante de una pieza cortada se usa en la siguiente fila (descontando 3 mm por corte). El margen de seguridad se aplica al total de piezas y luego se redondea a cajas completas.</p>
             <p>Puertas y ventanas descuentan solo piezas enteras (estimación conservadora). Los diseños en espiga y hexagonales se estiman por área con un porcentaje propio de corte. Es una estimación de referencia: el maestro de obra puede ajustarla según el corte real.</p>
           </footer>

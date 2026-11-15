@@ -34,9 +34,159 @@ input[type='color'] { @apply h-8 w-10 cursor-pointer rounded border border-plano
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
+@page {
+  size: A4 portrait;
+  margin: 12mm;
+}
+
 @media print {
+  html, body, #root {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #111827 !important;
+    font-size: 9.5pt;
+    line-height: 1.35;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  #root > div {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  #root main {
+    display: block !important;
+    flex: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
   .no-print { display: none !important; }
-  body { background: #fff; }
-  .hoja { box-shadow: none !important; border: none !important; padding: 0 !important; }
-  @page { margin: 14mm; }
+
+  .costos-pagina {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .costos-layout {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hoja {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #fff !important;
+  }
+
+  .hoja h1, .hoja h2, .hoja h3 {
+    color: #111827 !important;
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+
+  .hoja .report-meta {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12pt !important;
+  }
+
+  .hoja .report-room-full {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .hoja .report-summary,
+  .hoja .report-surface {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .hoja .report-warning {
+    border: 1px solid #d97706 !important;
+    background: #fff7ed !important;
+    color: #7c2d12 !important;
+  }
+
+  .hoja .report-surface {
+    margin: 0 0 10pt !important;
+    padding: 9pt !important;
+    border-color: #cbd5e1 !important;
+    border-radius: 4pt !important;
+  }
+
+  .hoja .report-capture {
+    max-height: 52mm;
+    object-fit: contain;
+  }
+
+  .hoja .bg-cobalto-50,
+  .hoja .bg-plano-50 {
+    border: 1px solid #cbd5e1 !important;
+    background: #f3f4f6 !important;
+    color: #111827 !important;
+  }
+
+  .hoja .text-plano-500,
+  .hoja .text-plano-700 {
+    color: #374151 !important;
+  }
+
+  .hoja dl > div {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 8pt !important;
+  }
+
+  .hoja dd {
+    max-width: 75mm;
+    text-align: right;
+  }
+
+  .hoja .overflow-x-auto {
+    overflow: visible !important;
+  }
+
+  .hoja table {
+    width: 100% !important;
+    border-collapse: collapse;
+    font-size: 8.5pt;
+  }
+
+  .hoja thead { display: table-header-group; }
+  .hoja tr { break-inside: avoid-page; page-break-inside: avoid; }
+  .hoja th, .hoja td { padding: 3pt 4pt; }
+
+  .hoja .report-method {
+    border-top: 1px solid #cbd5e1;
+    padding-top: 8pt;
+    color: #374151 !important;
+    font-size: 8pt;
+  }
+
+  .hoja a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
 }
