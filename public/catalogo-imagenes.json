@@ -76,6 +76,25 @@
   "acabado": "Satinado"
  },
  {
+  "id": "f-piso-amor-morado-45x45",
+  "nombre": "Amor Morado",
+  "tipo": "piso",
+  "imagen": "texturas/pisos/amor_morado-45x45.webp",
+  "miniatura": "texturas/pisos/min/amor_morado-45x45.webp",
+  "pieza": {
+   "ancho": 45,
+   "largo": 45
+  },
+  "modulo": {
+   "cols": 1,
+   "filas": 1
+  },
+  "piezasPorCaja": 11,
+  "precioCaja": 42.9,
+  "marca": "San Lorenzo",
+  "acabado": "Brillante"
+ },
+ {
   "id": "f-piso-berna-gris-45x45",
   "nombre": "Berna Gris",
   "tipo": "piso",
