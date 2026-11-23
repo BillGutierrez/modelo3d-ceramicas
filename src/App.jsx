@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar.jsx';
+import AsistenteAyuda from './components/AsistenteAyuda.jsx';
 import { useCatalogo } from './store/useCatalogo.js';
 
 const Modelo3D = lazy(() => import('./pages/Modelo3D.jsx'));
@@ -23,6 +24,7 @@ export default function App() {
           </Routes>
         </Suspense>
       </main>
+      <AsistenteAyuda />
     </div>
   );
 }

@@ -45,6 +45,14 @@ Está construida con React, Vite y Three.js. No requiere servidor ni base de dat
 - Considera puertas y ventanas en el cálculo de las paredes.
 - El informe está maquetado para papel A4 y se puede imprimir o guardar como PDF desde el navegador. En el diálogo, selecciona **Guardar como PDF** y desactiva los encabezados y pies del navegador.
 
+### Asistente de ayuda
+
+- Acepta consultas escritas sobre navegación, ajustes del modelo, materiales, catálogo, cálculos e informes, y ofrece accesos directos a las secciones.
+- Puede consultar los datos del catálogo para responder por un producto específico e incluir su imagen, medida, piezas por caja, precio, marca y acabado; si no encuentra el nombre o falta un precio, lo indica sin inventar datos.
+- Compara productos, busca opciones por tipo, acabado, color y presupuesto, y estima cajas y costos usando las medidas indicadas o el espacio actual.
+- Reconoce sinónimos y distintas formas de expresar una consulta mediante reglas locales.
+- No usa IA, API ni base de datos; para preguntas fuera de estos temas ofrece una respuesta de orientación.
+
 > **Importante:** las cantidades y los costos son estimaciones para orientar la planificación. No sustituyen la medición ni el criterio del instalador.
 
 ## Origen de los materiales
